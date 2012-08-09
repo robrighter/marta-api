@@ -2,6 +2,7 @@
 var connect = require('connect')
     , express = require('express')
     , io = require('socket.io')
+    , scraper = require('scraper')
     , port = (process.env.PORT || 8081);
 
 //Setup Express
@@ -58,14 +59,17 @@ io.sockets.on('connection', function(socket){
 /////// ADD ALL YOUR ROUTES HERE  /////////
 
 server.get('/', function(req,res){
-  res.render('index.jade', {
+    res.render('index.jade', {
     locals : { 
               title : 'Your Page Title'
              ,description: 'Your Page Description'
              ,author: 'Your Name'
-             ,analyticssiteid: 'XXXXXXX' 
+             ,analyticssiteid: 'XXXXXXX'
+             ,thetext: "DASHBOARD"
             }
   });
+});
+  
 });
 
 
