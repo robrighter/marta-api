@@ -69,7 +69,18 @@ server.get('/', function(req,res){
             }
   });
 });
-  
+
+server.get('/cookie-test', function(req,res){
+    console.log(req);
+    res.render('index.jade', {
+    locals : { 
+              title : 'Your Page Title'
+             ,description: 'Your Page Description'
+             ,author: 'Your Name'
+             ,analyticssiteid: 'XXXXXXX'
+             ,thetext: "DASHBOARD"
+            }
+  });
 });
 
 
